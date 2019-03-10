@@ -6,6 +6,8 @@ import images from './images.jpg';
 import humidite from './humidite.png'; // Tell Webpack this JS file uses this image
 import nuage from './nuage.jpg'; // Tell Webpack this JS file uses this image
 import degres from './degres.jpg'; // Tell Webpack this JS file uses this image
+import sun from './sun.png'; // Tell Webpack this JS file uses this image
+import rain from './rain.png'; // Tell Webpack this JS file uses this image
 
 
 class App extends Component {
@@ -50,23 +52,33 @@ return(
   {this.state.buttonClicked && <div className="container"> <div className="row">
     <div className="col-sm">
     <img src={images} className="image" alt="titre1" />
-    <p><h3>{this.state.result.current.condition.text}</h3></p>
+    <p><h5>{this.state.result.current.condition.text}</h5></p>
     </div> <br/>
     <div className="col-sm">
     <img src={humidite} className="image" alt="titre2"/>
-    <h3><p>{this.state.result.current.humidity}</p></h3>
+    <h5><p>{this.state.result.current.humidity}</p></h5>
     {/* {this.state.result !== {} && <p> {this.state.result.current.feelslike_c} </p>} */}
     {/* {this.state.feelslike_c} */}
     </div><br/>
     <div className="col-sm">
     <img src={nuage} className="image" alt="titre3"/>
-    <h3><p>{this.state.result.current.cloud}</p></h3>
+    <h5><p>{this.state.result.current.cloud}</p></h5>
 
     </div><br/>
     <div className="col-sm">
-    <h3 className="h3"> Local time :  <br/><br/><br/><p>{this.state.result.location.localtime}</p>
-</h3>
-    </div>
+    <h3 className="h3"> Local time :  </h3><br/><br/><p><h5>{this.state.result.location.localtime}</h5></p>
+<br/><br/>
+</div>
+
+<div className="col-sm">
+    <img src={sun} className="sun" alt="titre4"/><br/><br/>
+    <p><h5>{this.state.result.current.wind_degree}</h5></p>
+</div>
+<div className="col-sm">
+    <img src={rain} className="rain" alt="titre4"/><br/><br/>
+    <p><h5>{this.state.result.current.feelslike_c}</h5></p>
+</div>
+
   </div></div>}
 </div>
 )
